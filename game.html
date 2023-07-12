@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <script src="codemirror/lib/codemirror.js"></script>
+    <link href="codemirror/lib/codemirror.css" rel="stylesheet"/>
+    <script src="codemirror/mode/clike/clike.js"></script>
+    <script src="codemirror/mode/clike/test.js"></script>
+    <link href="codemirror/theme/dracula.css" rel="stylesheet"/>
+    <script src="codemirror/addon/edit/closebrackets.js"></script>
+    <script src="codemirror/addon/edit/matchbrackets.js"></script>
+    <link href="style.css" rel="stylesheet"/>
+    <!-- <script src="./game.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <div class="output-container">
+          <div id="output-display"></div>
+        </div>
+        <div class="editor-container">
+          <div class="resize-handle"></div>
+          <textarea id="code-editor"></textarea>
+          <button id="submit-button">Submit</button>
+        </div>
+      </div>
+      
+      
+      
+    <script>
+        var editor = CodeMirror.fromTextArea
+        (document.getElementById('code-editor'),{
+            mode: "text/x-c++src",
+            theme: "dracula",
+            lineNumbers: true,
+            autoCloseBrackets: true
+        });
+        var width = window.innerWidth
+        var height = window.innerHeight
+        editor.setSize(0.5*width, height)
+
+    </script>
+</body>
+</html>
